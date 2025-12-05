@@ -3,7 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mity - Your Gateway to Online Success</title>
+  <title>Mity - Professional E-commerce Services UAE</title>
   <script src="/_sdk/element_sdk.js"></script>
   <style>
     * {
@@ -13,10 +13,12 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.6;
-      color: #1a1a1a;
+      color: #1a202c;
       overflow-x: hidden;
+      background: #ffffff;
+      box-sizing: border-box;
     }
 
     /* Navigation */
@@ -24,61 +26,71 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
       z-index: 1000;
-      padding: 1.2rem 0;
-      transition: all 0.3s;
-    }
-
-    nav.scrolled {
-      padding: 0.8rem 0;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
     }
 
     .nav-container {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 1.2rem 3rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
     .logo {
-      font-size: 1.8rem;
-      font-weight: 800;
+      font-size: 2rem;
+      font-weight: 700;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+    }
+
+    .logo:hover {
+      letter-spacing: 1px;
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
       list-style: none;
+      align-items: center;
     }
 
     .nav-links a {
       text-decoration: none;
-      color: #4a5568;
-      font-weight: 500;
-      transition: color 0.3s;
+      color: #2d3748;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s;
       cursor: pointer;
       position: relative;
+      padding: 0.5rem 0;
     }
 
     .nav-links a::after {
       content: '';
       position: absolute;
-      bottom: -5px;
+      bottom: 0;
       left: 0;
       width: 0;
-      height: 2px;
+      height: 3px;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       transition: width 0.3s;
+      border-radius: 2px;
     }
 
     .nav-links a:hover {
@@ -89,12 +101,31 @@
       width: 100%;
     }
 
+    .nav-cta {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white !important;
+      padding: 0.75rem 1.75rem;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      transition: all 0.3s;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    .nav-cta::after {
+      display: none;
+    }
+
     /* Hero Section */
     .hero {
-      margin-top: 80px;
+      margin-top: 90px;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
-      padding: 6rem 2rem;
+      padding: 8rem 3rem;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -107,610 +138,485 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
       pointer-events: none;
     }
 
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      line-height: 1.2;
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
       position: relative;
       z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      letter-spacing: -1px;
     }
 
     .hero p {
-      font-size: 1.3rem;
-      margin-bottom: 2rem;
+      font-size: 1.4rem;
+      margin-bottom: 3rem;
       opacity: 0.95;
-      position: relative;
-      z-index: 1;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .special-offer-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.2);
-      border: 2px solid rgba(255, 255, 255, 0.4);
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      backdrop-filter: blur(10px);
-      animation: pulse-glow 2s ease-in-out infinite;
-      position: relative;
-      z-index: 1;
+    .hero-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
-    @keyframes pulse-glow {
-      0%, 100% {
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-        transform: scale(1);
-      }
-      50% {
-        box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
-        transform: scale(1.02);
-      }
-    }
-
-    .cta-button {
+    .btn-primary {
       background: white;
       color: #667eea;
-      padding: 1rem 2.5rem;
+      padding: 1.2rem 3rem;
       border: none;
       border-radius: 50px;
       font-size: 1.1rem;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       transition: all 0.3s;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      padding: 1.2rem 3rem;
+      border: 2px solid white;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      background: white;
+      color: #667eea;
+      transform: translateY(-3px);
+    }
+
+    /* Trust Banner */
+    .trust-banner {
+      background: #f7fafc;
+      padding: 2rem 3rem;
+      text-align: center;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .trust-stats {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+    }
+
+    .trust-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .trust-number {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .trust-label {
+      font-size: 1rem;
+      color: #4a5568;
+      font-weight: 600;
+    }
+
+    /* Service Categories */
+    .service-categories {
+      padding: 6rem 3rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-title {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #1a202c;
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+    }
+
+    .section-subtitle {
+      font-size: 1.3rem;
+      color: #718096;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 25px;
+      padding: 3rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 2px solid transparent;
+      cursor: pointer;
       position: relative;
       overflow: hidden;
-      z-index: 1;
     }
 
-    .cta-button::before {
+    .category-card::before {
       content: '';
       position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: rgba(102, 126, 234, 0.1);
-      transform: translate(-50%, -50%);
-      transition: width 0.6s, height 0.6s;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      transform: scaleX(0);
+      transition: transform 0.4s;
     }
 
-    .cta-button:hover::before {
-      width: 300px;
-      height: 300px;
+    .category-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
+      border-color: #667eea;
     }
 
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    .category-card:hover::before {
+      transform: scaleX(1);
     }
 
-    /* Platform Logos */
-    .platforms {
-      background: #f7fafc;
-      padding: 4rem 2rem;
-      text-align: center;
+    .category-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s;
     }
 
-    .platforms h3 {
-      font-size: 1.5rem;
+    .category-card:hover .category-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .category-icon svg {
+      width: 40px;
+      height: 40px;
+      stroke: #667eea;
+    }
+
+    .category-title {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #1a202c;
+      margin-bottom: 1rem;
+    }
+
+    .category-description {
+      font-size: 1.05rem;
       color: #4a5568;
-      margin-bottom: 3rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .category-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .category-features li {
+      padding: 0.75rem 0;
+      color: #2d3748;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .category-features li:last-child {
+      border-bottom: none;
+    }
+
+    .category-features li::before {
+      content: '✓';
+      color: white;
+      background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .category-price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .price-amount {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #667eea;
+    }
+
+    .price-label {
+      font-size: 1rem;
+      color: #718096;
+    }
+
+    .category-cta {
+      width: 100%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1rem;
+      border: none;
+      border-radius: 15px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    .category-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    /* Platforms Section */
+    .platforms {
+      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+      padding: 6rem 3rem;
+    }
+
+    .platforms-content {
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
     .platform-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 2.5rem;
-      max-width: 1300px;
-      margin: 0 auto;
-      align-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
     }
 
     .platform-logo {
       background: white;
       padding: 2.5rem 2rem;
       border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
       font-weight: 700;
       font-size: 1.5rem;
       transition: all 0.3s;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100px;
-      letter-spacing: 0.5px;
+      min-height: 120px;
       border: 2px solid transparent;
     }
 
     .platform-logo:hover {
       transform: translateY(-8px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-      border-color: currentColor;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+      border-color: #e2e8f0;
     }
 
-    .platform-logo.amazon {
-      color: #FF9900;
-      font-weight: 900;
-      letter-spacing: -0.5px;
+    .platform-logo img {
+      max-width: 100%;
+      max-height: 60px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
     }
 
-    .platform-logo.noon {
-      background: linear-gradient(135deg, #FED402 0%, #FFAD00 100%);
-      color: #1a1a1a;
-      font-weight: 800;
-      text-transform: lowercase;
-    }
+    .platform-logo.amazon { color: #FF9900; font-weight: 900; }
+    .platform-logo.noon { color: #1a1a1a; }
+    .platform-logo.carrefour { color: #0054A6; text-transform: uppercase; }
+    .platform-logo.namshi { color: #000000; text-transform: uppercase; letter-spacing: 2px; }
 
-    .platform-logo.carrefour {
-      color: #0054A6;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .platform-logo.sharaf {
-      color: #E30613;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .platform-logo.namshi {
-      color: #000000;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .platform-logo.lulu {
-      color: #E31E24;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
-
-    .platform-logo.mumzworld {
-      color: #FF69B4;
-      font-weight: 800;
-      text-transform: lowercase;
-      letter-spacing: 0.3px;
-    }
-
-    .platform-logo.dubizzle {
-      color: #003C43;
-      font-weight: 800;
-      text-transform: lowercase;
-      letter-spacing: 0.5px;
-    }
-
-    .platform-logo.sixthstreet {
-      color: #1a1a1a;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-    }
-
-    .platform-logo.desertcart {
-      color: #2E7D32;
-      font-weight: 800;
-      text-transform: capitalize;
-      letter-spacing: 0.5px;
-    }
-
-    .platform-logo.sivvi {
-      color: #000000;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-    }
-
-    .platform-logo.ounass {
-      color: #1a1a1a;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
-    }
-
-    /* Urgency Banner */
-    .urgency-banner {
-      background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
-      padding: 1.5rem 2rem;
-      text-align: center;
-      border-bottom: 4px solid #c05621;
-      animation: subtle-pulse 3s ease-in-out infinite;
-    }
-
-    @keyframes subtle-pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.95; }
-    }
-
-    /* Why Choose Section */
+    /* Why Choose Us */
     .why-choose {
-      background: white;
-      padding: 5rem 2rem;
-    }
-
-    .why-container {
-      max-width: 1200px;
+      padding: 6rem 3rem;
+      max-width: 1400px;
       margin: 0 auto;
     }
 
     .benefits-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
       margin-top: 3rem;
     }
 
     .benefit-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+      padding: 3rem 2rem;
+      border-radius: 25px;
       text-align: center;
-      padding: 2rem;
-      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
       transition: all 0.3s;
       border: 2px solid transparent;
     }
 
     .benefit-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       border-color: #667eea;
+      box-shadow: 0 15px 50px rgba(102, 126, 234, 0.15);
     }
 
     .benefit-icon {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      animation: float 3s ease-in-out infinite;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .benefit-card:nth-child(1) .benefit-icon { animation-delay: 0s; }
-    .benefit-card:nth-child(2) .benefit-icon { animation-delay: 0.3s; }
-    .benefit-card:nth-child(3) .benefit-icon { animation-delay: 0.6s; }
-    .benefit-card:nth-child(4) .benefit-icon { animation-delay: 0.9s; }
+    .benefit-icon svg {
+      width: 100%;
+      height: 100%;
+    }
 
-    @keyframes float {
+    @keyframes lightning-strike {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.1); }
+    }
+
+    .benefit-icon .lightning {
+      animation: lightning-strike 1.5s ease-in-out infinite;
+    }
+
+    @keyframes coin-flip {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
+
+    .benefit-icon .coin {
+      animation: coin-flip 3s ease-in-out infinite;
+      transform-style: preserve-3d;
+    }
+
+    @keyframes badge-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    .benefit-icon .badge {
+      animation: badge-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes support-bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
 
-    .benefit-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-      color: #2d3748;
+    .benefit-icon .support {
+      animation: support-bounce 2s ease-in-out infinite;
     }
 
-    .benefit-card p {
-      color: #718096;
-      font-size: 1rem;
-    }
-
-    /* Services Section */
-    .services {
-      padding: 5rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      color: #2d3748;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      font-size: 1.2rem;
-      color: #718096;
-      margin-bottom: 3rem;
-    }
-
-    /* Price Comparison */
-    .price-comparison {
-      background: white;
-      padding: 2.5rem;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      margin-bottom: 4rem;
-    }
-
-    .price-comparison h3 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      color: #2d3748;
-    }
-
-    .comparison-table {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .comparison-column {
-      background: #f7fafc;
-      padding: 1.5rem;
-      border-radius: 15px;
-      border: 2px solid #e2e8f0;
-      transition: all 0.3s;
-    }
-
-    .comparison-column:hover {
-      transform: translateY(-5px);
-    }
-
-    .comparison-column.highlight-col {
-      background: linear-gradient(135deg, #f0f4ff 0%, #e6eeff 100%);
-      border: 3px solid #667eea;
-      transform: scale(1.05);
-    }
-
-    .comparison-column.highlight-col:hover {
-      transform: scale(1.08);
-    }
-
-    .comparison-header {
-      font-size: 1.3rem;
-      font-weight: 700;
-      padding: 1rem;
-      text-align: center;
-      border-radius: 10px;
-      margin-bottom: 1.5rem;
-    }
-
-    .comparison-header.other {
-      background: #e2e8f0;
-      color: #4a5568;
-    }
-
-    .comparison-header.mytie {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-    }
-
-    .comparison-item {
-      padding: 0.75rem;
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-      color: #4a5568;
-    }
-
-    .comparison-item strong {
-      float: right;
-      color: #2d3748;
-    }
-
-    .comparison-total {
-      margin-top: 1.5rem;
-      padding: 1rem;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    .comparison-total.other {
-      background: #cbd5e0;
-      color: #2d3748;
-    }
-
-    .comparison-total.mytie {
-      background: #48bb78;
-      color: white;
-    }
-
-    .savings-badge {
-      margin-top: 1rem;
-      padding: 0.75rem;
-      background: #f6ad55;
-      color: white;
-      text-align: center;
-      border-radius: 10px;
-      font-weight: 700;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-
-    @keyframes shimmer {
-      0% { left: -100%; }
-      100% { left: 100%; }
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .service-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      transition: all 0.3s;
-      border: 2px solid transparent;
-      position: relative;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      border-color: #667eea;
-      box-shadow: 0 8px 30px rgba(102, 126, 234, 0.15);
-    }
-
-    .service-card.featured {
-      border: 3px solid #667eea;
-      padding: 2.5rem;
-    }
-
-    .service-card.highlight {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      transform: scale(1.05);
-    }
-
-    .service-card.highlight:hover {
-      transform: scale(1.08) translateY(-5px);
-    }
-
-    .service-card.highlight h3,
-    .service-card.highlight p,
-    .service-card.highlight .price {
-      color: white;
-    }
-
-    .service-card.highlight .price-note {
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .badge {
-      position: absolute;
-      top: -15px;
-      right: 20px;
-      background: #f6ad55;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      box-shadow: 0 4px 10px rgba(246, 173, 85, 0.3);
-    }
-
-    .badge.popular {
-      background: #48bb78;
-    }
-
-    .feature-list {
-      list-style: none;
-      margin-top: 1.5rem;
-      text-align: left;
-    }
-
-    .feature-list li {
-      padding: 0.5rem 0;
-      font-size: 0.95rem;
-      color: #4a5568;
-    }
-
-    .service-card.highlight .feature-list li {
-      color: rgba(255, 255, 255, 0.95);
-    }
-
-    .service-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      display: inline-block;
-      animation: service-float 3s ease-in-out infinite;
-    }
-
-    @keyframes service-float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-8px) rotate(5deg); }
-    }
-
-    .service-card:hover .service-icon {
-      animation: service-wiggle 0.5s ease-in-out;
-    }
-
-    @keyframes service-wiggle {
-      0%, 100% { transform: rotate(0deg); }
-      25% { transform: rotate(-10deg); }
-      75% { transform: rotate(10deg); }
-    }
-
-    .service-card h3 {
+    .benefit-title {
       font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #2d3748;
-    }
-
-    .service-card p {
-      color: #718096;
-      margin-bottom: 1rem;
-    }
-
-    .price {
-      font-size: 2rem;
       font-weight: 800;
-      color: #667eea;
-      margin-top: 1rem;
+      color: #1a202c;
+      margin-bottom: 1rem;
     }
 
-    .price-note {
-      font-size: 0.85rem;
-      color: #a0aec0;
+    .benefit-description {
+      font-size: 1.05rem;
+      color: #4a5568;
+      line-height: 1.7;
     }
 
-    /* Testimonials Section */
+    /* Testimonials */
     .testimonials {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      padding: 5rem 2rem;
+      padding: 6rem 3rem;
+      color: white;
     }
 
-    .testimonials-container {
-      max-width: 1200px;
+    .testimonials-content {
+      max-width: 1400px;
       margin: 0 auto;
     }
 
     .testimonials-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
       margin-top: 3rem;
     }
 
     .testimonial-card {
       background: white;
-      padding: 2rem;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      color: #1a202c;
+      padding: 3rem;
+      border-radius: 25px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
       transition: all 0.3s;
     }
 
     .testimonial-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     }
 
     .stars {
       font-size: 1.5rem;
-      margin-bottom: 1rem;
       color: #f6ad55;
+      margin-bottom: 1.5rem;
     }
 
     .testimonial-text {
-      font-size: 1rem;
+      font-size: 1.1rem;
       line-height: 1.8;
-      color: #4a5568;
-      margin-bottom: 1.5rem;
+      color: #2d3748;
+      margin-bottom: 2rem;
       font-style: italic;
     }
 
@@ -720,91 +626,66 @@
       gap: 0.25rem;
     }
 
-    .testimonial-author strong {
-      color: #2d3748;
-      font-size: 1.1rem;
+    .author-name {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #1a202c;
     }
 
-    .testimonial-author span {
+    .author-title {
       color: #718096;
-      font-size: 0.9rem;
-    }
-
-    /* About Section */
-    .about {
-      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-      padding: 5rem 2rem;
-    }
-
-    .about-content {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .founder-image {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      margin: 0 auto 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-      color: white;
-      box-shadow: 0 8px 30px rgba(102, 126, 234, 0.3);
-    }
-
-    .about-content h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #2d3748;
-    }
-
-    .about-content p {
-      font-size: 1.1rem;
-      color: #4a5568;
-      line-height: 1.8;
-      margin-bottom: 1rem;
+      font-size: 0.95rem;
     }
 
     /* FAQ Section */
     .faq {
-      padding: 5rem 2rem;
-      max-width: 900px;
+      padding: 6rem 3rem;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
     .faq-item {
       background: white;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-      border-radius: 15px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
       cursor: pointer;
       transition: all 0.3s;
       border: 2px solid transparent;
     }
 
     .faq-item:hover {
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
       border-color: #667eea;
     }
 
     .faq-question {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #2d3748;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a202c;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
+    }
+
+    .faq-icon {
+      font-size: 1.5rem;
+      color: #667eea;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
     }
 
     .faq-answer {
-      margin-top: 1rem;
-      color: #718096;
+      margin-top: 1.5rem;
+      color: #4a5568;
       line-height: 1.8;
+      font-size: 1.05rem;
       display: none;
     }
 
@@ -818,82 +699,125 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .faq-icon {
-      transition: transform 0.3s;
-      color: #667eea;
-    }
-
-    .faq-item.active .faq-icon {
-      transform: rotate(180deg);
-    }
-
     /* Contact Section */
     .contact {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
       color: white;
-      padding: 5rem 2rem;
-      text-align: center;
+      padding: 6rem 3rem;
     }
 
     .contact-content {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
-    }
-
-    .contact h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
     }
 
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: start;
+      gap: 4rem;
+      margin-top: 3rem;
     }
 
-    .contact-form-container {
-      background: white;
-      padding: 2.5rem;
-      border-radius: 20px;
-      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+    .contact-info h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 800;
     }
 
-    .contact-form-container h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #2d3748;
-      text-align: left;
-    }
-
-    .contact-form {
+    .contact-methods {
       display: flex;
       flex-direction: column;
-      gap: 1.2rem;
+      gap: 2rem;
+    }
+
+    .contact-method {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s;
+    }
+
+    .contact-method:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #667eea;
+      transform: translateX(10px);
+    }
+
+    .contact-method-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .contact-method-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: white;
+    }
+
+    .contact-method h4 {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+
+    .contact-method a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-method p {
+      opacity: 0.8;
+      font-size: 1rem;
+    }
+
+    .contact-form-wrapper {
+      background: white;
+      padding: 3rem;
+      border-radius: 25px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-form-wrapper h3 {
+      font-size: 2rem;
+      color: #1a202c;
+      margin-bottom: 2rem;
+      font-weight: 800;
     }
 
     .form-group {
-      text-align: left;
+      margin-bottom: 1.5rem;
     }
 
     .form-group label {
       display: block;
-      color: #4a5568;
+      color: #2d3748;
       font-weight: 600;
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
     }
 
     .form-group input,
     .form-group select,
     .form-group textarea {
       width: 100%;
-      padding: 0.9rem;
+      padding: 1rem;
       border: 2px solid #e2e8f0;
-      border-radius: 10px;
+      border-radius: 12px;
       font-size: 1rem;
       transition: all 0.3s;
       font-family: inherit;
+      color: #1a202c;
     }
 
     .form-group input:focus,
@@ -901,36 +825,38 @@
     .form-group textarea:focus {
       outline: none;
       border-color: #667eea;
-      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+      box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
     }
 
     .form-group textarea {
       resize: vertical;
-      min-height: 100px;
+      min-height: 120px;
     }
 
     .submit-btn {
+      width: 100%;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
-      padding: 1.1rem;
+      padding: 1.2rem;
       border: none;
-      border-radius: 10px;
-      font-size: 1.1rem;
+      border-radius: 12px;
+      font-size: 1.2rem;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.3s;
-      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
     }
 
     .submit-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+      box-shadow: 0 8px 30px rgba(102, 126, 234, 0.5);
     }
 
     .form-message {
       display: none;
-      padding: 1rem;
-      border-radius: 10px;
+      padding: 1.2rem;
+      border-radius: 12px;
+      margin-top: 1.5rem;
       font-weight: 600;
       text-align: center;
     }
@@ -938,96 +864,6 @@
     .form-message.success {
       background: #48bb78;
       color: white;
-    }
-
-    .form-message.error {
-      background: #f56565;
-      color: white;
-    }
-
-    .contact-info-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .contact-methods {
-      background: rgba(255, 255, 255, 0.15);
-      padding: 2rem;
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-    }
-
-    .contact-methods h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-      opacity: 0.95;
-    }
-
-    .contact-method {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 1.3rem;
-      border-radius: 15px;
-      backdrop-filter: blur(10px);
-      margin-bottom: 1rem;
-      transition: all 0.3s;
-    }
-
-    .contact-method:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateX(5px);
-    }
-
-    .contact-method-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-method h4 {
-      font-size: 1.1rem;
-      margin: 0;
-    }
-
-    .contact-method a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.4rem;
-      font-weight: 600;
-      display: block;
-      margin-bottom: 0.3rem;
-      transition: opacity 0.3s;
-    }
-
-    .contact-method a:hover {
-      opacity: 0.8;
-    }
-
-    .contact-method p {
-      margin: 0;
-      opacity: 0.9;
-      font-size: 0.9rem;
-    }
-
-    .quick-contact-btns {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 1.5rem;
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-      text-align: center;
-    }
-
-    .quick-contact-btns p {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      opacity: 0.95;
-    }
-
-    .quick-contact-btns-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
     }
 
     /* Sticky Contact Buttons */
@@ -1048,62 +884,41 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.8rem;
       cursor: pointer;
       transition: all 0.3s;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
       border: none;
-      animation: pulse-float 2s ease-in-out infinite;
       position: relative;
     }
 
-    .sticky-btn svg {
-      width: 28px;
-      height: 28px;
-      fill: white;
-    }
-
-    .sticky-btn.call {
-      background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
-      color: white;
+    .sticky-btn:hover {
+      transform: scale(1.15) translateY(-5px);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
     }
 
     .sticky-btn.whatsapp {
       background: #25D366;
-      color: white;
     }
 
-    .sticky-btn.email {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
+    .sticky-btn.phone {
+      background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
     }
 
-    .sticky-btn:hover {
-      transform: scale(1.1) translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-      animation: none;
-    }
-
-    @keyframes pulse-float {
-      0%, 100% {
-        transform: translateY(0);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      }
-      50% {
-        transform: translateY(-8px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
-      }
+    .sticky-btn svg {
+      width: 30px;
+      height: 30px;
+      fill: white;
     }
 
     .sticky-btn-label {
       position: absolute;
       right: 75px;
-      background: #2d3748;
+      background: #1a202c;
       color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
       white-space: nowrap;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 600;
       opacity: 0;
       pointer-events: none;
@@ -1114,36 +929,43 @@
       opacity: 1;
     }
 
-    /* Stats Banner */
-    .stats-banner {
-      background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
-      padding: 3rem 2rem;
-      text-align: center;
+    /* Modal Styles */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      animation: fadeIn 0.3s ease-in;
     }
 
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
+    .modal-overlay.active {
+      display: flex;
     }
 
-    .stat-item {
-      color: white;
-      animation: fadeInUp 0.6s ease-out forwards;
-      opacity: 0;
+    .modal-content {
+      background: white;
+      border-radius: 30px;
+      max-width: 900px;
+      width: 100%;
+      max-height: 90%;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.4s ease-out;
     }
 
-    .stat-item:nth-child(1) { animation-delay: 0.1s; }
-    .stat-item:nth-child(2) { animation-delay: 0.2s; }
-    .stat-item:nth-child(3) { animation-delay: 0.3s; }
-    .stat-item:nth-child(4) { animation-delay: 0.4s; }
-
-    @keyframes fadeInUp {
+    @keyframes slideUp {
       from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(50px);
       }
       to {
         opacity: 1;
@@ -1151,49 +973,243 @@
       }
     }
 
-    .stat-number {
-      font-size: 3.5rem;
-      font-weight: 900;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    .modal-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 3rem;
+      border-radius: 30px 30px 0 0;
+      position: relative;
     }
 
-    .stat-label {
+    .modal-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+      backdrop-filter: blur(10px);
+    }
+
+    .modal-close:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: rotate(90deg);
+    }
+
+    .modal-close svg {
+      width: 24px;
+      height: 24px;
+      stroke: white;
+      stroke-width: 2;
+    }
+
+    .modal-title {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-subtitle {
       font-size: 1.2rem;
       opacity: 0.95;
     }
 
+    .modal-body {
+      padding: 3rem;
+    }
+
+    .package-section {
+      margin-bottom: 3rem;
+    }
+
+    .package-section h3 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #1a202c;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .package-section h3::before {
+      content: '';
+      width: 5px;
+      height: 30px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 5px;
+    }
+
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .package-box {
+      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+      padding: 2rem;
+      border-radius: 20px;
+      border: 2px solid #e2e8f0;
+      transition: all 0.3s;
+    }
+
+    .package-box:hover {
+      border-color: #667eea;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+    }
+
+    .package-box h4 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #667eea;
+      margin-bottom: 0.5rem;
+    }
+
+    .package-box .price {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #1a202c;
+      margin-bottom: 1rem;
+    }
+
+    .package-box .price span {
+      font-size: 1rem;
+      color: #718096;
+      font-weight: 600;
+    }
+
+    .package-features-list {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+
+    .package-features-list li {
+      padding: 0.75rem 0;
+      color: #2d3748;
+      font-weight: 500;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .package-features-list li:last-child {
+      border-bottom: none;
+    }
+
+    .package-features-list li::before {
+      content: '✓';
+      color: white;
+      background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+      font-size: 0.75rem;
+    }
+
+    .modal-cta {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1.2rem 3rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+      display: block;
+      width: 100%;
+      margin-top: 2rem;
+    }
+
+    .modal-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(102, 126, 234, 0.5);
+    }
+
     /* Footer */
     footer {
-      background: #2d3748;
+      background: #0f1419;
       color: white;
+      padding: 3rem;
       text-align: center;
-      padding: 2rem;
+    }
+
+    footer p {
+      font-size: 1rem;
+      opacity: 0.8;
     }
 
     /* Responsive */
+    @media (max-width: 1024px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .categories-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+    }
+
     @media (max-width: 768px) {
+      .nav-container {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .nav-cta {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+
+      .hero {
+        padding: 5rem 1.5rem;
+      }
+
       .hero h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
 
       .hero p {
         font-size: 1.1rem;
       }
 
-      .nav-links {
-        gap: 0.8rem;
-        font-size: 0.9rem;
+      .section-title {
+        font-size: 2.2rem;
       }
 
-      .services-grid,
-      .platform-grid {
+      .categories-grid {
         grid-template-columns: 1fr;
       }
 
-      .platform-logo {
-        font-size: 1.3rem;
-        padding: 2rem 1.5rem;
+      .platform-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
       }
 
       .sticky-contact {
@@ -1204,41 +1220,15 @@
       .sticky-btn {
         width: 55px;
         height: 55px;
-        font-size: 1.5rem;
       }
 
       .sticky-btn svg {
-        width: 24px;
-        height: 24px;
+        width: 26px;
+        height: 26px;
       }
 
       .sticky-btn-label {
         display: none;
-      }
-
-      .comparison-column.highlight-col {
-        transform: scale(1);
-      }
-
-      .section-title {
-        font-size: 2rem;
-      }
-
-      .cta-button {
-        padding: 1rem 2rem;
-        font-size: 1rem;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stat-number {
-        font-size: 2.5rem;
-      }
-
-      .stat-label {
-        font-size: 1rem;
       }
     }
   </style>
@@ -1247,593 +1237,292 @@
   <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
  </head>
  <body><!-- Navigation -->
-  <nav id="navbar">
+  <nav>
    <div class="nav-container">
-    <div class="logo" id="company-name">
-     Mity
+    <div class="logo-section">
+     <div class="logo" id="company-name">
+      Mity
+     </div>
     </div>
     <ul class="nav-links">
      <li><a data-scroll="services">Services</a></li>
-     <li><a data-scroll="about">About</a></li>
+     <li><a data-scroll="platforms">Platforms</a></li>
+     <li><a data-scroll="about">Why Us</a></li>
      <li><a data-scroll="faq">FAQ</a></li>
-     <li><a data-scroll="contact">Contact</a></li>
+     <li><a data-scroll="contact" class="nav-cta">Get Started</a></li>
     </ul>
    </div>
   </nav><!-- Hero Section -->
   <section class="hero">
-   <h1 id="hero-title">Launch Your Business on UAE's Top Platforms</h1>
-   <p id="hero-subtitle">We help retailers sell online across Amazon UAE, Noon, Namshi, and 10+ major marketplaces</p>
-   <div class="special-offer-badge">
-    <svg width="20" height="20" viewbox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: middle; margin-right: 0.5rem; animation: spin 4s linear infinite;"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-    </svg> Special Offer: 20% OFF for new clients today!
-   </div><button class="cta-button" id="cta-button" data-scroll="services">View Packages</button>
-  </section><!-- Platforms -->
-  <section class="platforms">
-   <h3>Trusted E-commerce Platforms We Work With</h3>
-   <div class="platform-grid">
-    <div class="platform-logo amazon">
-     amazon.ae
-    </div>
-    <div class="platform-logo noon">
-     noon
-    </div>
-    <div class="platform-logo namshi">
-     NAMSHI
-    </div>
-    <div class="platform-logo carrefour">
-     CARREFOUR
-    </div>
-    <div class="platform-logo sharaf">
-     SHARAF DG
-    </div>
-    <div class="platform-logo lulu">
-     LULU
-    </div>
-    <div class="platform-logo mumzworld">
-     mumzworld
-    </div>
-    <div class="platform-logo dubizzle">
-     dubizzle
-    </div>
-    <div class="platform-logo sixthstreet">
-     6thStreet.com
-    </div>
-    <div class="platform-logo desertcart">
-     Desertcart
-    </div>
-    <div class="platform-logo sivvi">
-     SIVVI
-    </div>
-    <div class="platform-logo ounass">
-     OUNASS
+   <div class="hero-content">
+    <h1 id="hero-title">Launch Your Business on UAE's Top Platforms</h1>
+    <p id="hero-subtitle">Professional e-commerce setup and management services for Amazon UAE, Noon, Namshi, and 10+ major marketplaces</p>
+    <div class="hero-buttons"><button class="btn-primary" data-scroll="services" id="cta-button">Get Started Today</button> <a href="tel:+971529704315" class="btn-secondary">Call Us Now</a>
     </div>
    </div>
-  </section><!-- Urgency Banner -->
-  <section class="urgency-banner">
-   <div style="max-width: 1200px; margin: 0 auto;">
-    <div style="color: white; font-size: 1.3rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-     <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: pulse 1.5s ease-in-out infinite;"><circle cx="12" cy="12" r="10"></circle> <polyline points="12 6 12 12 16 14"></polyline>
-     </svg><span>Limited Slots Available!</span> <span style="background: rgba(255, 255, 255, 0.2); padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 1.1rem;">Only 5 spots left this month</span>
-    </div>
-   </div>
-  </section><!-- Success Stats -->
-  <section class="stats-banner">
-   <div class="stats-grid">
-    <div class="stat-item">
-     <div class="stat-number">
+  </section><!-- Trust Banner -->
+  <section class="trust-banner">
+   <div class="trust-stats">
+    <div class="trust-stat">
+     <div class="trust-number">
       200+
      </div>
-     <div class="stat-label">
+     <div class="trust-label">
       Businesses Launched
      </div>
     </div>
-    <div class="stat-item">
-     <div class="stat-number">
+    <div class="trust-stat">
+     <div class="trust-number">
       10+
      </div>
-     <div class="stat-label">
+     <div class="trust-label">
       Years Experience
      </div>
     </div>
-    <div class="stat-item">
-     <div class="stat-number">
+    <div class="trust-stat">
+     <div class="trust-number">
       12
      </div>
-     <div class="stat-label">
+     <div class="trust-label">
       Platforms Supported
      </div>
     </div>
-    <div class="stat-item">
-     <div class="stat-number">
+    <div class="trust-stat">
+     <div class="trust-number">
       7-10
      </div>
-     <div class="stat-label">
+     <div class="trust-label">
       Days to Go Live
      </div>
     </div>
    </div>
+  </section><!-- Service Categories -->
+  <section class="service-categories" id="services">
+   <div class="section-header">
+    <h2 class="section-title">Our Service Categories</h2>
+    <p class="section-subtitle">Comprehensive e-commerce solutions tailored to your business needs</p>
+   </div>
+   <div class="categories-grid"><!-- Platform Setup -->
+    <div class="category-card" data-modal="platform-setup">
+     <div class="category-icon">
+      <svg viewbox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10" /> <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      </svg>
+     </div>
+     <h3 class="category-title">Platform Setup &amp; Registration</h3>
+     <p class="category-description">Complete account creation with verification and compliance on major e-commerce platforms</p>
+     <ul class="category-features">
+      <li>Account registration &amp; verification</li>
+      <li>Business documentation setup</li>
+      <li>Tax compliance (TRN integration)</li>
+      <li>Payment gateway configuration</li>
+      <li>Seller dashboard optimization</li>
+     </ul>
+     <div class="category-price"><span class="price-amount">AED 399</span> <span class="price-label">per platform</span>
+     </div><button class="category-cta" onclick="event.stopPropagation(); document.querySelector('[data-scroll=contact]').click();">Get Started</button>
+    </div><!-- Product Listing -->
+    <div class="category-card" data-modal="product-listing">
+     <div class="category-icon">
+      <svg viewbox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /> <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline> <line x1="12" y1="22.08" x2="12" y2="12" />
+      </svg>
+     </div>
+     <h3 class="category-title">Product Listing Services</h3>
+     <p class="category-description">SEO-optimized product listings that drive visibility and conversions</p>
+     <ul class="category-features">
+      <li>Keyword-optimized titles</li>
+      <li>Detailed product descriptions</li>
+      <li>Attribute mapping &amp; categorization</li>
+      <li>Inventory &amp; pricing setup</li>
+      <li>Bulk upload capabilities</li>
+     </ul>
+     <div class="category-price"><span class="price-amount">AED 4</span> <span class="price-label">per product (min 50)</span>
+     </div><button class="category-cta" onclick="event.stopPropagation(); document.querySelector('[data-scroll=contact]').click();">Get Started</button>
+    </div><!-- Photography -->
+    <div class="category-card" data-modal="photography">
+     <div class="category-icon">
+      <svg viewbox="0 0 24 24" fill="none" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" /> <circle cx="12" cy="13" r="4" />
+      </svg>
+     </div>
+     <h3 class="category-title">Professional Photography</h3>
+     <p class="category-description">Studio-quality product photos that increase conversion rates by 30-50%</p>
+     <ul class="category-features">
+      <li>White background images</li>
+      <li>Multiple angle shots</li>
+      <li>Lifestyle photography</li>
+      <li>Image editing &amp; enhancement</li>
+      <li>Platform-compliant sizing</li>
+     </ul>
+     <div class="category-price"><span class="price-amount">AED 25</span> <span class="price-label">per product</span>
+     </div><button class="category-cta" onclick="event.stopPropagation(); document.querySelector('[data-scroll=contact]').click();">Get Started</button>
+    </div><!-- Order Management -->
+    <div class="category-card" data-modal="order-management">
+     <div class="category-icon">
+      <svg viewbox="0 0 24 24" fill="none" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10" /> <line x1="12" y1="20" x2="12" y2="4" /> <line x1="6" y1="20" x2="6" y2="14" />
+      </svg>
+     </div>
+     <h3 class="category-title">Order Management</h3>
+     <p class="category-description">Complete daily operations management so you can focus on growing your business</p>
+     <ul class="category-features">
+      <li>Daily order processing</li>
+      <li>Inventory synchronization</li>
+      <li>Customer service handling</li>
+      <li>Returns &amp; refunds coordination</li>
+      <li>Performance reporting</li>
+     </ul>
+     <div class="category-price"><span class="price-amount">AED 1,999</span> <span class="price-label">per month</span>
+     </div><button class="category-cta" onclick="event.stopPropagation(); document.querySelector('[data-scroll=contact]').click();">Get Started</button>
+    </div><!-- Complete Packages -->
+    <div class="category-card" data-modal="packages">
+     <div class="category-icon">
+      <svg viewbox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+      </svg>
+     </div>
+     <h3 class="category-title">Complete Packages</h3>
+     <p class="category-description">All-inclusive solutions from setup to management with significant savings</p>
+     <ul class="category-features">
+      <li>Starter Package - AED 2,499</li>
+      <li>Growth Package - AED 7,999</li>
+      <li>Enterprise Package - AED 15,999</li>
+      <li>Custom solutions available</li>
+      <li>20% OFF for new clients</li>
+     </ul>
+     <div class="category-price"><span class="price-amount">Save 30%</span> <span class="price-label">vs individual services</span>
+     </div><button class="category-cta" onclick="event.stopPropagation(); document.querySelector('[data-scroll=contact]').click();">View Packages</button>
+    </div><!-- Additional Services -->
+    <div class="category-card" data-modal="additional">
+     <div class="category-icon">
+      <svg viewbox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+      </svg>
+     </div>
+     <h3 class="category-title">Additional Services</h3>
+     <p class="category-description">Specialized services to maximize your online presence and sales</p>
+     <ul class="category-features">
+      <li>Category approvals - AED 599</li>
+      <li>Training sessions - AED 799</li>
+      <li>Website development - AED 5,999+</li>
+      <li>Content creation - AED 299</li>
+      <li>Advertising management - 15%</li>
+     </ul>
+     <div class="category-price"><span class="price-amount">Custom</span> <span class="price-label">pricing available</span>
+     </div><button class="category-cta" onclick="event.stopPropagation(); document.querySelector('[data-scroll=contact]').click();">Learn More</button>
+    </div>
+   </div>
+  </section><!-- Platforms Section -->
+  <section class="platforms" id="platforms">
+   <div class="platforms-content">
+    <div class="section-header">
+     <h2 class="section-title">Trusted E-commerce Platforms</h2>
+     <p class="section-subtitle">We specialize in launching and managing your business across UAE's top marketplaces</p>
+    </div>
+    <div class="platform-grid">
+     <div class="platform-logo amazon"><img src="https://logovent.com/blog/wp-content/uploads/2024/05/The-Arrow-Smile-Logo-from-2000-till-Present.jpg" alt="Amazon" style="width: 100%; height: auto; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=color:#FF9900;font-weight:900;>amazon.ae</span>';">
+     </div>
+     <div class="platform-logo noon"><img src="https://images.seeklogo.com/logo-png/46/1/noon-com-logo-png_seeklogo-467331.png" alt="Noon" style="width: 100%; height: auto; object-fit: contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=background:linear-gradient(135deg,#FED402 0%,#FFAD00 100%);color:#1a1a1a;font-weight:700;padding:0.5rem 1rem;border-radius:10px;>noon</span>';">
+     </div>
+    </div>
+   </div>
   </section><!-- Why Choose Us -->
-  <section class="why-choose">
-   <div class="why-container">
-    <h2 class="section-title">Why Choose Mity?</h2>
-    <div class="benefits-grid">
-     <div class="benefit-card">
-      <div class="benefit-icon">
-       <svg width="60" height="60" viewbox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-       </svg>
-      </div>
-      <h3>Fastest Launch</h3>
-      <p>Get live in 7-10 days vs industry average of 3-4 weeks</p>
+  <section class="why-choose" id="about">
+   <div class="section-header">
+    <h2 class="section-title">Why Choose Mity</h2>
+    <p class="section-subtitle">10+ years of experience helping businesses thrive in UAE's e-commerce landscape</p>
+   </div>
+   <div class="benefits-grid">
+    <div class="benefit-card">
+     <div class="benefit-icon">
+      <svg class="lightning" viewbox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><defs>
+        <lineargradient id="lightning-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+         <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+         <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+        </lineargradient>
+       </defs> <path d="M50 10 L30 45 L45 45 L35 90 L70 50 L55 50 L65 10 Z" fill="url(#lightning-grad)" stroke="#667eea" stroke-width="2" />
+      </svg>
      </div>
-     <div class="benefit-card">
-      <div class="benefit-icon">
-       <svg width="60" height="60" viewbox="0 0 24 24" fill="none" stroke="#48bb78" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line> <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-       </svg>
-      </div>
-      <h3>Transparent Pricing</h3>
-      <p>No hidden fees. 30% cheaper than competitors</p>
+     <h3 class="benefit-title">Fastest Launch</h3>
+     <p class="benefit-description">Get live in 7-10 days vs industry average of 3-4 weeks with our streamlined process</p>
+    </div>
+    <div class="benefit-card">
+     <div class="benefit-icon">
+      <svg class="coin" viewbox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><defs>
+        <lineargradient id="coin-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+         <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+         <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+        </lineargradient>
+       </defs> <circle cx="50" cy="50" r="35" fill="url(#coin-grad)" stroke="#667eea" stroke-width="3" /> <path d="M50 25 C45 25 40 28 40 35 C40 40 43 42 50 44 C57 46 60 48 60 53 C60 58 55 61 50 61 C45 61 42 59 40 56" stroke="white" stroke-width="4" stroke-linecap="round" fill="none" /> <line x1="50" y1="18" x2="50" y2="28" stroke="white" stroke-width="4" stroke-linecap="round" /> <line x1="50" y1="58" x2="50" y2="68" stroke="white" stroke-width="4" stroke-linecap="round" />
+      </svg>
      </div>
-     <div class="benefit-card">
-      <div class="benefit-icon">
-       <svg width="60" height="60" viewbox="0 0 24 24" fill="none" stroke="#f6ad55" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /> <polyline points="22 4 12 14.01 9 11.01"></polyline>
-       </svg>
-      </div>
-      <h3>10+ Years Experience</h3>
-      <p>Proven track record with 200+ successful launches</p>
+     <h3 class="benefit-title">Best Pricing</h3>
+     <p class="benefit-description">30% cheaper than competitors with transparent pricing and no hidden fees</p>
+    </div>
+    <div class="benefit-card">
+     <div class="benefit-icon">
+      <svg class="badge" viewbox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><defs>
+        <lineargradient id="badge-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+         <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+         <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+        </lineargradient>
+       </defs> <circle cx="50" cy="45" r="30" fill="url(#badge-grad)" stroke="#667eea" stroke-width="3" /> <path d="M38 70 L42 85 L50 78 L58 85 L62 70" fill="url(#badge-grad)" stroke="#667eea" stroke-width="2" /> <path d="M40 45 L47 52 L62 35" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+      </svg>
      </div>
-     <div class="benefit-card">
-      <div class="benefit-icon">
-       <svg width="60" height="60" viewbox="0 0 24 24" fill="none" stroke="#764ba2" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4"></circle> <path d="M23 21v-2a4 4 0 0 0-3-3.87" /> <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-       </svg>
-      </div>
-      <h3>Dedicated Support</h3>
-      <p>Direct access to your account manager 24/7</p>
+     <h3 class="benefit-title">Proven Track Record</h3>
+     <p class="benefit-description">200+ successful launches across 12 platforms with measurable results</p>
+    </div>
+    <div class="benefit-card">
+     <div class="benefit-icon">
+      <svg class="support" viewbox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><defs>
+        <lineargradient id="support-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+         <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+         <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+        </lineargradient>
+       </defs> <circle cx="35" cy="35" r="18" fill="url(#support-grad)" stroke="#667eea" stroke-width="2" /> <circle cx="65" cy="35" r="18" fill="url(#support-grad)" stroke="#667eea" stroke-width="2" /> <path d="M20 55 Q25 45 35 50 L35 75 Q35 85 28 85 L20 85 Z" fill="url(#support-grad)" stroke="#667eea" stroke-width="2" /> <path d="M80 55 Q75 45 65 50 L65 75 Q65 85 72 85 L80 85 Z" fill="url(#support-grad)" stroke="#667eea" stroke-width="2" /> <path d="M35 75 Q50 85 65 75" stroke="#667eea" stroke-width="3" stroke-linecap="round" fill="none" /> <circle cx="30" cy="32" r="4" fill="white" /> <circle cx="70" cy="32" r="4" fill="white" />
+      </svg>
      </div>
+     <h3 class="benefit-title">Full Support</h3>
+     <p class="benefit-description">Dedicated account manager available 24/7 for all your needs</p>
     </div>
    </div>
-  </section><!-- How It Works -->
-  <section style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%); padding: 5rem 2rem;">
-   <div style="max-width: 1200px; margin: 0 auto;">
-    <h2 class="section-title">How We Launch Your Business in 7-10 Days</h2>
-    <p class="section-subtitle">Our proven 4-step process to get you selling online fast</p>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
-     <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); text-align: center; position: relative; transition: all 0.3s;">
-      <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 800; animation: pulse 2s infinite;">
-       1
-      </div>
-      <div style="font-size: 2.5rem; margin: 1rem 0;">
-       <svg width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="2" style="animation: bounce 2s infinite;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-       </svg>
-      </div>
-      <h3 style="font-size: 1.3rem; color: #2d3748; margin-bottom: 0.5rem;">Free Consultation</h3>
-      <p style="color: #718096; line-height: 1.6;">Call us or fill the form. We'll analyze your business needs and recommend the best platforms for maximum ROI.</p>
-     </div>
-     <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); text-align: center; position: relative; transition: all 0.3s;">
-      <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 800; animation: pulse 2s infinite; animation-delay: 0.2s;">
-       2
-      </div>
-      <div style="font-size: 2.5rem; margin: 1rem 0;">
-       <svg width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#48bb78" stroke-width="2" style="animation: float 3s ease-in-out infinite; animation-delay: 0.2s;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /> <polyline points="14 2 14 8 20 8"></polyline> <line x1="16" y1="13" x2="8" y2="13"></line> <line x1="16" y1="17" x2="8" y2="17"></line> <polyline points="10 9 9 9 8 9"></polyline>
-       </svg>
-      </div>
-      <h3 style="font-size: 1.3rem; color: #2d3748; margin-bottom: 0.5rem;">Documentation &amp; Setup</h3>
-      <p style="color: #718096; line-height: 1.6;">We collect your documents (trade license, TRN) and handle all platform registrations, verifications, and approvals.</p>
-     </div>
-     <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); text-align: center; position: relative; transition: all 0.3s;">
-      <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 800; animation: pulse 2s infinite; animation-delay: 0.4s;">
-       3
-      </div>
-      <div style="font-size: 2.5rem; margin: 1rem 0;">
-       <svg width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#f6ad55" stroke-width="2" style="animation: float 3s ease-in-out infinite; animation-delay: 0.4s;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect> <circle cx="8.5" cy="8.5" r="1.5"></circle> <polyline points="21 15 16 10 5 21"></polyline>
-       </svg>
-      </div>
-      <h3 style="font-size: 1.3rem; color: #2d3748; margin-bottom: 0.5rem;">Content Creation</h3>
-      <p style="color: #718096; line-height: 1.6;">Professional photos, optimized product listings, compelling descriptions—everything to make your products stand out.</p>
-     </div>
-     <div style="background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); text-align: center; position: relative; transition: all 0.3s;">
-      <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 50px; height: 50px; background: linear-gradient(135deg, #48bb78 0%, #38a169 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.8rem; font-weight: 800; animation: pulse 2s infinite; animation-delay: 0.6s;">
-       <svg width="30" height="30" viewbox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-       </svg>
-      </div>
-      <div style="font-size: 2.5rem; margin: 1rem 0;">
-       <svg width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#764ba2" stroke-width="2" style="animation: float 3s ease-in-out infinite; animation-delay: 0.6s;"><line x1="12" y1="1" x2="12" y2="23"></line> <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-       </svg>
-      </div>
-      <h3 style="font-size: 1.3rem; color: #2d3748; margin-bottom: 0.5rem;">Go Live &amp; Start Selling</h3>
-      <p style="color: #718096; line-height: 1.6;">Your store goes live! We provide training and ongoing support to ensure you succeed from day one.</p>
-     </div>
-    </div>
-   </div>
-  </section><!-- Services Section -->
-  <section class="services" id="services">
-   <h2 class="section-title">Our Services &amp; Pricing</h2>
-   <p class="section-subtitle">Choose from flexible packages or build your own solution</p><!-- Limited Time Offer Banner -->
-   <div style="background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%); padding: 2rem; border-radius: 20px; text-align: center; margin-bottom: 3rem; box-shadow: 0 8px 30px rgba(246, 173, 85, 0.3); position: relative; overflow: hidden;">
-    <div style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent); animation: shimmer 3s infinite;"></div>
-    <div style="font-size: 1.8rem; font-weight: 800; color: white; margin-bottom: 0.5rem; position: relative; z-index: 1;">
-     <svg width="32" height="32" viewbox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: middle; margin-right: 0.5rem; animation: spin 2s linear infinite;"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-     </svg> LIMITED TIME OFFER!
-    </div>
-    <div style="font-size: 1.2rem; color: white; opacity: 0.95; position: relative; z-index: 1;">
-     Get 20% OFF on any package when you contact us TODAY!
-    </div>
-   </div><!-- Price Comparison -->
-   <div class="price-comparison">
-    <h3>Compare &amp; Save</h3>
-    <div class="comparison-table">
-     <div class="comparison-column">
-      <div class="comparison-header other">
-       Other Agencies
-      </div>
-      <div class="comparison-item">
-       Platform Setup: <strong>AED 800-1200</strong>
-      </div>
-      <div class="comparison-item">
-       50 Products Listing: <strong>AED 500-750</strong>
-      </div>
-      <div class="comparison-item">
-       Photo Shoot: <strong>AED 2000-3000</strong>
-      </div>
-      <div class="comparison-item">
-       Monthly Management: <strong>AED 3500-5000</strong>
-      </div>
-      <div class="comparison-total other">
-       Total: <strong>AED 6,800+</strong>
-      </div>
-     </div>
-     <div class="comparison-column highlight-col">
-      <div class="comparison-header mytie">
-       Mity Pricing
-      </div>
-      <div class="comparison-item">
-       Platform Setup: <strong>AED 399</strong>
-      </div>
-      <div class="comparison-item">
-       50 Products Listing: <strong>AED 200</strong>
-      </div>
-      <div class="comparison-item">
-       Photo Shoot (50 items): <strong>AED 1250</strong>
-      </div>
-      <div class="comparison-item">
-       Monthly Management: <strong>AED 1999</strong>
-      </div>
-      <div class="comparison-total mytie">
-       Total: <strong>AED 3,848</strong>
-      </div>
-      <div class="savings-badge">
-       Save up to AED 2,952!
-      </div>
-     </div>
-    </div>
-   </div>
-   <div class="services-grid">
-    <div class="service-card featured">
-     <div class="badge">
-      Most Popular
-     </div>
-     <div class="service-icon">
-      <svg width="50" height="50" viewbox="0 0 24 24" fill="#667eea"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-      </svg>
-     </div>
-     <h3>Starter Package</h3>
-     <p>Perfect for new sellers: 1 platform setup + 50 products listed + basic training + 1 month support</p>
-     <div class="price">
-      AED 2,499
-     </div>
-     <div class="price-note">
-      Save AED 500
-     </div>
-     <ul class="feature-list">
-      <li>✓ Amazon or Noon setup</li>
-      <li>✓ 50 product listings</li>
-      <li>✓ 2-hour training session</li>
-      <li>✓ 30 days order support</li>
-     </ul>
-    </div>
-    <div class="service-card featured highlight">
-     <div class="badge popular">
-      Best Value
-     </div>
-     <div class="service-icon">
-      <svg width="50" height="50" viewbox="0 0 24 24" fill="white"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-      </svg>
-     </div>
-     <h3>Growth Package</h3>
-     <p>Scale faster: 2 platforms + 150 products + photos + training + 3 months full support</p>
-     <div class="price">
-      AED 7,999
-     </div>
-     <div class="price-note">
-      Save AED 3,000
-     </div>
-     <ul class="feature-list">
-      <li>✓ 2 major platforms setup</li>
-      <li>✓ 150 product listings</li>
-      <li>✓ Photo shoot (50 items)</li>
-      <li>✓ Category approvals</li>
-      <li>✓ 3 months order management</li>
-     </ul>
-    </div>
-    <div class="service-card featured">
-     <div class="badge">
-      Premium
-     </div>
-     <div class="service-icon">
-      <svg width="50" height="50" viewbox="0 0 24 24" fill="#f6ad55"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-      </svg>
-     </div>
-     <h3>Enterprise Package</h3>
-     <p>Full-service solution: Multi-platform + unlimited listings + website + 6 months managed service</p>
-     <div class="price">
-      AED 15,999
-     </div>
-     <div class="price-note">
-      Everything included
-     </div>
-     <ul class="feature-list">
-      <li>✓ 4+ platforms setup</li>
-      <li>✓ Unlimited product listings</li>
-      <li>✓ Professional photo shoot</li>
-      <li>✓ Custom e-commerce website</li>
-      <li>✓ 6 months full management</li>
-      <li>✓ Advertising campaigns</li>
-     </ul>
-    </div>
-    <div class="service-card">
-     <div class="service-icon">
-      <svg width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#764ba2" stroke-width="2"><circle cx="9" cy="21" r="1"></circle> <circle cx="20" cy="21" r="1"></circle> <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-      </svg>
-     </div>
-     <h3>Platform Setup</h3>
-     <p>Individual platform account creation with verification and compliance</p>
-     <div class="price">
-      AED 399
-     </div>
-     <div class="price-note">
-      Per platform
-     </div>
-    </div>
-    <div class="service-card">
-     <div class="service-icon">
-      <svg width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#48bb78" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /> <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline> <line x1="12" y1="22.08" x2="12" y2="12"></line>
-      </svg>
-     </div>
-     <h3>Product Listing</h3>
-     <p>SEO-optimized listings with descriptions, images, and attributes</p>
-     <div class="price">
-      AED 4
-     </div>
-     <div class="price-note">
-      Per product (min 50)
-     </div>
-    </div>
-    <div class="service-card">
-     <div class="service-icon">
-      <svg width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" /> <circle cx="12" cy="13" r="4"></circle>
-      </svg>
-     </div>
-     <h3>Product Photography</h3>
-     <p>Professional studio photos with white background and lifestyle shots</p>
-     <div class="price">
-      AED 25
-     </div>
-     <div class="price-note">
-      Per product
-     </div>
-    </div>
-    <div class="service-card">
-     <div class="service-icon">
-      <svg width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#f6ad55" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /> <polyline points="22 4 12 14.01 9 11.01"></polyline>
-      </svg>
-     </div>
-     <h3>Category Approval</h3>
-     <p>Documentation and approval process for restricted categories</p>
-     <div class="price">
-      AED 599
-     </div>
-     <div class="price-note">
-      Per category
-     </div>
-    </div>
-    <div class="service-card">
-     <div class="service-icon">
-      <svg width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#764ba2" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line> <line x1="12" y1="20" x2="12" y2="4"></line> <line x1="6" y1="20" x2="6" y2="14"></line>
-      </svg>
-     </div>
-     <h3>Order Management</h3>
-     <p>Daily operations, inventory sync, customer service, and reporting</p>
-     <div class="price">
-      AED 1,999
-     </div>
-     <div class="price-note">
-      Per month
-     </div>
-    </div>
-    <div class="service-card">
-     <div class="service-icon">
-      <svg width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#48bb78" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /> <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-      </svg>
-     </div>
-     <h3>Training Session</h3>
-     <p>Hands-on training for your team on platform management</p>
-     <div class="price">
-      AED 799
-     </div>
-     <div class="price-note">
-      2-hour session
-     </div>
-    </div>
-    <div class="service-card">
-     <div class="service-icon">
-      <svg width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="2"><circle cx="12" cy="12" r="10"></circle> <line x1="2" y1="12" x2="22" y2="12"></line> <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-      </svg>
-     </div>
-     <h3>Website Development</h3>
-     <p>Custom e-commerce website with payment gateway and CMS</p>
-     <div class="price">
-      AED 5,999
-     </div>
-     <div class="price-note">
-      Starting price
-     </div>
-    </div>
-    <div class="service-card">
-     <div class="service-icon">
-      <svg width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#f6ad55" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect> <line x1="7" y1="2" x2="7" y2="22"></line> <line x1="17" y1="2" x2="17" y2="22"></line> <line x1="2" y1="12" x2="22" y2="12"></line> <line x1="2" y1="7" x2="7" y2="7"></line> <line x1="2" y1="17" x2="7" y2="17"></line> <line x1="17" y1="17" x2="22" y2="17"></line> <line x1="17" y1="7" x2="22" y2="7"></line>
-      </svg>
-     </div>
-     <h3>Content Creation</h3>
-     <p>Product videos, A+ content, banners, and marketing materials</p>
-     <div class="price">
-      AED 299
-     </div>
-     <div class="price-note">
-      Per asset
-     </div>
-    </div>
-    <div class="service-card">
-     <div class="service-icon">
-      <svg width="50" height="50" viewbox="0 0 24 24" fill="none" stroke="#764ba2" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"></line> <line x1="18" y1="20" x2="18" y2="4"></line> <line x1="6" y1="20" x2="6" y2="16"></line>
-      </svg>
-     </div>
-     <h3>Advertising Management</h3>
-     <p>PPC campaigns on Amazon, Noon with optimization and reporting</p>
-     <div class="price">
-      15%
-     </div>
-     <div class="price-note">
-      Of ad spend (min AED 500)
-     </div>
-    </div>
-   </div>
-  </section><!-- Trust Badges -->
-  <section style="background: white; padding: 3rem 2rem; text-align: center; border-top: 3px solid #f7fafc;">
-   <div style="max-width: 1200px; margin: 0 auto;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; align-items: center;">
-     <div style="padding: 1rem;">
-      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">
-       <svg width="40" height="40" viewbox="0 0 24 24" fill="none" stroke="#48bb78" stroke-width="2" style="animation: pulse 2s infinite;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /> <polyline points="22 4 12 14.01 9 11.01"></polyline>
-       </svg>
-      </div>
-      <div style="font-weight: 700; color: #2d3748; font-size: 1.1rem;">
-       100% Verified
-      </div>
-      <div style="color: #718096; font-size: 0.9rem;">
-       Licensed Agency
-      </div>
-     </div>
-     <div style="padding: 1rem;">
-      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">
-       <svg width="40" height="40" viewbox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="2" style="animation: pulse 2s infinite; animation-delay: 0.2s;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-       </svg>
-      </div>
-      <div style="font-weight: 700; color: #2d3748; font-size: 1.1rem;">
-       Secure &amp; Safe
-      </div>
-      <div style="color: #718096; font-size: 0.9rem;">
-       Your Data Protected
-      </div>
-     </div>
-     <div style="padding: 1rem;">
-      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">
-       <svg width="40" height="40" viewbox="0 0 24 24" fill="none" stroke="#f6ad55" stroke-width="2" style="animation: pulse 2s infinite; animation-delay: 0.4s;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-       </svg>
-      </div>
-      <div style="font-weight: 700; color: #2d3748; font-size: 1.1rem;">
-       Fast Delivery
-      </div>
-      <div style="color: #718096; font-size: 0.9rem;">
-       Live in 7-10 Days
-      </div>
-     </div>
-     <div style="padding: 1rem;">
-      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">
-       <svg width="40" height="40" viewbox="0 0 24 24" fill="none" stroke="#764ba2" stroke-width="2" style="animation: pulse 2s infinite; animation-delay: 0.6s;"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-       </svg>
-      </div>
-      <div style="font-weight: 700; color: #2d3748; font-size: 1.1rem;">
-       10+ Years
-      </div>
-      <div style="color: #718096; font-size: 0.9rem;">
-       Industry Experience
-      </div>
-     </div>
-     <div style="padding: 1rem;">
-      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">
-       <svg width="40" height="40" viewbox="0 0 24 24" fill="none" stroke="#48bb78" stroke-width="2" style="animation: pulse 2s infinite; animation-delay: 0.8s;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /> <circle cx="12" cy="7" r="4"></circle>
-       </svg>
-      </div>
-      <div style="font-weight: 700; color: #2d3748; font-size: 1.1rem;">
-       Money Back
-      </div>
-      <div style="color: #718096; font-size: 0.9rem;">
-       If Not Satisfied
-      </div>
-     </div>
-     <div style="padding: 1rem;">
-      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">
-       <svg width="40" height="40" viewbox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="2" style="animation: pulse 2s infinite; animation-delay: 1s;"><circle cx="12" cy="12" r="10"></circle> <polyline points="12 6 12 12 16 14"></polyline>
-       </svg>
-      </div>
-      <div style="font-weight: 700; color: #2d3748; font-size: 1.1rem;">
-       24/7 Support
-      </div>
-      <div style="color: #718096; font-size: 0.9rem;">
-       Always Available
-      </div>
-     </div>
-    </div>
-   </div>
-  </section><!-- Testimonials Section -->
+  </section><!-- Testimonials -->
   <section class="testimonials">
-   <div class="testimonials-container">
-    <h2 class="section-title" style="color: white;">What Our Clients Say</h2>
+   <div class="testimonials-content">
+    <div class="section-header">
+     <h2 class="section-title" style="color: white;">What Our Clients Say</h2>
+     <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">Real success stories from businesses we've helped grow</p>
+    </div>
     <div class="testimonials-grid">
      <div class="testimonial-card">
       <div class="stars">
-       ★★★���★
+       ★★★★★
       </div>
-      <p class="testimonial-text">"Mity helped us launch on Amazon and Noon in just 10 days. Our sales increased by 300% in the first month. The team is professional and always available."</p>
-      <div class="testimonial-author"><strong>Ahmed Al Mansouri</strong> <span>Electronics Retailer, Dubai</span>
+      <p class="testimonial-text">Mity helped us launch on Amazon and Noon in just 10 days. Our sales increased by 300% in the first month. The team is professional and always available.</p>
+      <div class="testimonial-author"><span class="author-name">Ahmed Al Mansouri</span> <span class="author-title">Electronics Retailer, Dubai</span>
       </div>
      </div>
      <div class="testimonial-card">
       <div class="stars">
        ★★★★★
       </div>
-      <p class="testimonial-text">"Best decision we made! They managed everything from photos to listings. Now we're on 4 platforms and orders are flooding in. Worth every dirham."</p>
-      <div class="testimonial-author"><strong>Fatima Khan</strong> <span>Fashion Boutique Owner, Abu Dhabi</span>
+      <p class="testimonial-text">Best decision we made! They managed everything from photos to listings. Now we're on 4 platforms and orders are flooding in. Worth every dirham.</p>
+      <div class="testimonial-author"><span class="author-name">Fatima Khan</span> <span class="author-title">Fashion Boutique Owner, Abu Dhabi</span>
       </div>
      </div>
      <div class="testimonial-card">
       <div class="stars">
        ★★★★★
       </div>
-      <p class="testimonial-text">"Their pricing is unbeatable. We compared 5 agencies and Mity was 40% cheaper with better service. Our home goods store is now thriving online."</p>
-      <div class="testimonial-author"><strong>Rajesh Sharma</strong> <span>Home &amp; Living Store, Sharjah</span>
+      <p class="testimonial-text">Their pricing is unbeatable. We compared 5 agencies and Mity was 40% cheaper with better service. Our home goods store is now thriving online.</p>
+      <div class="testimonial-author"><span class="author-name">Rajesh Sharma</span> <span class="author-title">Home &amp; Living Store, Sharjah</span>
       </div>
      </div>
     </div>
-   </div>
-  </section><!-- About Section -->
-  <section class="about" id="about">
-   <div class="about-content">
-    <div class="founder-image">
-     <svg width="80" height="80" viewbox="0 0 24 24" fill="white"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /> <circle cx="12" cy="7" r="4"></circle>
-     </svg>
-    </div>
-    <h2>About Mity</h2>
-    <p>Founded by <strong>Kailash Gurnani</strong>, Mity represents the culmination of over a decade of e-commerce expertise in the UAE market. Kailash spent 10+ years mastering the intricacies of online marketplaces, helping countless brands navigate the complexities of platforms like Amazon, Noon, Namshi, and other major e-commerce giants.</p>
-    <p>After witnessing firsthand the challenges small retailers face when going digital, Kailash decided to bridge the gap. He founded Mity with a clear mission: to democratize online selling by making it accessible, affordable, and hassle-free for every business, regardless of size.</p>
-    <p>Today, Mity is your trusted partner in digital transformation. We don't just set up accounts—we build sustainable online businesses. Our hands-on approach combines technical expertise with deep market knowledge, ensuring your success on UAE's most competitive platforms.</p>
-    <p><em>"Every business deserves a chance to thrive online. At Mity, we make that happen."</em> - Kailash Gurnani, Founder &amp; CEO</p>
    </div>
   </section><!-- FAQ Section -->
   <section class="faq" id="faq">
-   <h2 class="section-title">Frequently Asked Questions</h2>
+   <div class="section-header">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-subtitle">Everything you need to know about our services</p>
+   </div>
    <div class="faq-item">
     <div class="faq-question">
-     What exactly does the platform setup include? <span class="faq-icon">��</span>
+     What exactly does the platform setup include? <span class="faq-icon">▼</span>
     </div>
     <div class="faq-answer">
      Our platform setup includes complete account registration, business verification, tax documentation (TRN setup), brand registry (if applicable), payment gateway integration, seller dashboard configuration, and initial policy compliance setup. We handle all paperwork and communication with the platform to get you approved and ready to sell.
@@ -1844,7 +1533,7 @@
      How long does it take to go live on a platform? <span class="faq-icon">▼</span>
     </div>
     <div class="faq-answer">
-     Typically, the setup process takes 7-14 business days depending on the platform and your business documentation readiness. Platforms like Noon and Amazon UAE require verification that can take 5-10 days. Fashion platforms like Namshi and Sivvi are usually faster at 3-7 days. We expedite wherever possible and keep you updated throughout.
+     Typically, the setup process takes 7-14 business days depending on the platform and your business documentation readiness. Platforms like Noon and Amazon UAE require verification that can take 5-10 days. We expedite wherever possible and keep you updated throughout.
     </div>
    </div>
    <div class="faq-item">
@@ -1860,7 +1549,7 @@
      What's included in your product listing service? <span class="faq-icon">▼</span>
     </div>
     <div class="faq-answer">
-     Each product listing includes: title optimization with keywords, detailed product descriptions, attribute mapping, category selection, pricing setup, inventory configuration, shipping details, and image upload (if you provide them). We ensure your listings are SEO-optimized to rank well in platform searches. For bulk uploads, we use templates to streamline the process.
+     Each product listing includes: title optimization with keywords, detailed product descriptions, attribute mapping, category selection, pricing setup, inventory configuration, shipping details, and image upload (if you provide them). We ensure your listings are SEO-optimized to rank well in platform searches.
     </div>
    </div>
    <div class="faq-item">
@@ -1868,7 +1557,7 @@
      Can you help with multiple platforms simultaneously? <span class="faq-icon">▼</span>
     </div>
     <div class="faq-answer">
-     Absolutely! We specialize in multi-platform strategies. We can set you up on multiple e-commerce platforms (Amazon, Noon, Namshi, Carrefour, Dubizzle, etc.) simultaneously. This maximizes your reach and diversifies your revenue streams. We also help you manage inventory across platforms to avoid overselling.
+     Absolutely! We specialize in multi-platform strategies. We can set you up on multiple e-commerce platforms (Amazon, Noon, Namshi, Carrefour, Dubizzle, etc.) simultaneously. This maximizes your reach and diversifies your revenue streams.
     </div>
    </div>
    <div class="faq-item">
@@ -1876,66 +1565,49 @@
      What does order management service include? <span class="faq-icon">▼</span>
     </div>
     <div class="faq-answer">
-     Our monthly order management includes: daily order monitoring and processing, inventory synchronization across platforms, customer inquiry handling, returns and refunds coordination, performance metrics reporting, pricing optimization recommendations, and promotional campaign setup. Think of us as your dedicated online operations team.
-    </div>
-   </div>
-   <div class="faq-item">
-    <div class="faq-question">
-     Why do I need professional product photography? <span class="faq-icon">▼</span>
-    </div>
-    <div class="faq-answer">
-     Professional photos can increase conversion rates by 30-50%. Platforms favor high-quality images in search rankings, and customers trust products with clear, professional photos. Our photographers understand platform requirements (white backgrounds, multiple angles, size specifications) and create images that sell.
-    </div>
-   </div>
-   <div class="faq-item">
-    <div class="faq-question">
-     What are category approvals and why are they needed? <span class="faq-icon">▼</span>
-    </div>
-    <div class="faq-answer">
-     Many categories on platforms like Amazon require pre-approval to ensure quality and authenticity. Restricted categories include beauty, health, baby products, electronics, and grocery. We handle the application process, provide necessary documentation (invoices, certificates, brand authorization), and follow up until approval. This typically takes 7-14 days per category.
-    </div>
-   </div>
-   <div class="faq-item">
-    <div class="faq-question">
-     Do you offer post-launch support? <span class="faq-icon">▼</span>
-    </div>
-    <div class="faq-answer">
-     Yes! Beyond our ongoing order management service, we offer continued support including performance optimization, advertising campaign management, seasonal promotion planning, new product launches, policy compliance updates, and troubleshooting. We're invested in your long-term success, not just the initial setup.
-    </div>
-   </div>
-   <div class="faq-item">
-    <div class="faq-question">
-     Can I manage orders myself after training? <span class="faq-icon">▼</span>
-    </div>
-    <div class="faq-answer">
-     Definitely! Our comprehensive training program teaches you or your team everything needed to independently manage your online presence. We cover order processing, inventory management, customer service, performance analysis, and marketing basics. Many clients start with our management service and transition to self-management after gaining confidence.
-    </div>
-   </div>
-   <div class="faq-item">
-    <div class="faq-question">
-     What's the difference between selling on marketplaces vs. having my own website? <span class="faq-icon">▼</span>
-    </div>
-    <div class="faq-answer">
-     Marketplaces (Amazon, Noon, Namshi) give you immediate access to millions of customers but charge commission (15-25%). Your own website gives you full control, customer data, and no commissions, but requires marketing to drive traffic. We recommend a hybrid approach: start on marketplaces for quick sales, then build your website for long-term brand building and better margins.
-    </div>
-   </div>
-   <div class="faq-item">
-    <div class="faq-question">
-     What payment methods do you accept? <span class="faq-icon">▼</span>
-    </div>
-    <div class="faq-answer">
-     We accept bank transfers, cheques, and can invoice your company. For our complete package, we offer installment options: 50% upfront and 50% upon going live. Monthly services are billed in advance. All prices are in AED and exclude VAT (5% will be added to invoices).
+     Our monthly order management includes: daily order monitoring and processing, inventory synchronization across platforms, customer inquiry handling, returns and refunds coordination, performance metrics reporting, pricing optimization recommendations, and promotional campaign setup.
     </div>
    </div>
   </section><!-- Contact Section -->
   <section class="contact" id="contact">
    <div class="contact-content">
-    <h2>Ready to Start Selling Online?</h2>
-    <p style="font-size: 1.3rem; margin-bottom: 2.5rem;">Get in touch with us today and let's build your digital success story together.</p>
-    <div class="contact-grid"><!-- Contact Form -->
-     <div class="contact-form-container">
+    <div class="section-header">
+     <h2 class="section-title" style="color: white;">Ready to Start Selling Online?</h2>
+     <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">Get in touch today and let's build your digital success story together</p>
+    </div>
+    <div class="contact-grid">
+     <div class="contact-info">
+      <h3>Get In Touch</h3>
+      <div class="contact-methods">
+       <div class="contact-method">
+        <div class="contact-method-icon">
+         <svg viewbox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+         </svg>
+        </div>
+        <h4>Call Us</h4><a href="tel:+971529704315" id="contact-phone">+971 52 970 4315</a>
+        <p>Available 9 AM - 9 PM (7 days)</p>
+       </div>
+       <div class="contact-method">
+        <div class="contact-method-icon">
+         <svg viewbox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+         </svg>
+        </div>
+        <h4>WhatsApp</h4><a href="https://wa.me/971529704315" target="_blank" rel="noopener noreferrer">Chat Now</a>
+        <p>Instant responses &amp; quick quotes</p>
+       </div>
+       <div class="contact-method">
+        <div class="contact-method-icon">
+         <svg viewbox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /> <polyline points="22,6 12,13 2,6"></polyline>
+         </svg>
+        </div>
+        <h4>Email</h4><a href="mailto:lookgurnani@outlook.com" id="contact-email">lookgurnani@outlook.com</a>
+        <p>We'll reply within 2 hours</p>
+       </div>
+      </div>
+     </div>
+     <div class="contact-form-wrapper">
       <h3>Send Us a Message</h3>
-      <form id="contactForm" class="contact-form">
+      <form id="contactForm">
        <div class="form-group"><label for="fullName">Full Name *</label> <input type="text" id="fullName" name="fullName" required>
        </div>
        <div class="form-group"><label for="email">Email Address *</label> <input type="email" id="email" name="email" required>
@@ -1944,48 +1616,23 @@
        </div>
        <div class="form-group"><label for="businessType">Business Type *</label> <select id="businessType" name="businessType" required> <option value="">Select your business type</option> <option value="Fashion &amp; Clothing">Fashion &amp; Clothing</option> <option value="Electronics">Electronics</option> <option value="Home &amp; Living">Home &amp; Living</option> <option value="Beauty &amp; Cosmetics">Beauty &amp; Cosmetics</option> <option value="Baby &amp; Kids">Baby &amp; Kids</option> <option value="Food &amp; Grocery">Food &amp; Grocery</option> <option value="Sports &amp; Fitness">Sports &amp; Fitness</option> <option value="Other">Other</option> </select>
        </div>
-       <div class="form-group"><label for="package">Interested Package</label> <select id="package" name="package"> <option value="">Select a package (optional)</option> <option value="Starter Package - AED 2,499">Starter Package - AED 2,499</option> <option value="Growth Package - AED 7,999">Growth Package - AED 7,999</option> <option value="Enterprise Package - AED 15,999">Enterprise Package - AED 15,999</option> <option value="Custom Solution">Custom Solution</option> </select>
-       </div>
        <div class="form-group"><label for="message">Your Message *</label> <textarea id="message" name="message" required rows="4" placeholder="Tell us about your business and goals..."></textarea>
        </div><button type="submit" class="submit-btn">Send Message</button>
        <div id="formMessage" class="form-message"></div>
       </form>
-     </div><!-- Contact Info -->
-     <div class="contact-info-container">
-      <div class="contact-methods">
-       <h3>Direct Contact</h3>
-       <div class="contact-method">
-        <div class="contact-method-header">
-         <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-         </svg>
-         <h4>Call Directly</h4>
-        </div><a href="tel:+971529704315" id="contact-phone">+971 52 970 4315</a>
-        <p>Available 9 AM - 9 PM (7 days)</p>
-       </div>
-       <div class="contact-method">
-        <div class="contact-method-header">
-         <svg width="24" height="24" viewbox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-         </svg>
-         <h4>WhatsApp</h4>
-        </div><a href="https://wa.me/971529704315?text=Hi%20Mity%2C%20I%27m%20interested%20in%20launching%20my%20business%20online" target="_blank" rel="noopener noreferrer">Chat Now</a>
-        <p>Instant responses &amp; quick quotes</p>
-       </div>
-       <div class="contact-method">
-        <div class="contact-method-header">
-         <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /> <polyline points="22,6 12,13 2,6"></polyline>
-         </svg>
-         <h4>Email</h4>
-        </div><a href="mailto:ceo@mytie.co" id="contact-email">ceo@mytie.co</a>
-        <p>We'll reply within 2 hours</p>
-       </div>
-      </div>
      </div>
     </div>
    </div>
   </section><!-- Sticky Contact Buttons -->
-  <div class="sticky-contact"><a href="https://wa.me/971529704315?text=Hi%20Mity%2C%20I%27m%20interested%20in%20launching%20my%20business%20online" target="_blank" rel="noopener noreferrer" class="sticky-btn whatsapp" style="text-decoration: none; position: relative;"> <span class="sticky-btn-label">WhatsApp</span>
-    <svg viewbox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+  <div class="sticky-contact"><a href="https://wa.me/971529704315" target="_blank" rel="noopener noreferrer" class="sticky-btn whatsapp"> <span class="sticky-btn-label">WhatsApp</span>
+    <svg viewbox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg></a> <a href="tel:+971529704315" class="sticky-btn phone"> <span class="sticky-btn-label">Call Now</span>
+    <svg viewbox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
     </svg></a>
+  </div><!-- Modal Container -->
+  <div class="modal-overlay" id="modalOverlay">
+   <div class="modal-content" id="modalContent"><!-- Modal content will be dynamically inserted here -->
+   </div>
   </div><!-- Footer -->
   <footer>
    <p>© 2024 Mity. All rights reserved. | Empowering UAE businesses to thrive online.</p>
@@ -1995,9 +1642,9 @@
       company_name: "Mity",
       tagline: "Your Gateway to Online Success",
       hero_title: "Launch Your Business on UAE's Top Platforms",
-      hero_subtitle: "We help retailers sell online across Amazon UAE, Noon, Namshi, and 10+ major marketplaces",
+      hero_subtitle: "Professional e-commerce setup and management services for Amazon UAE, Noon, Namshi, and 10+ major marketplaces",
       cta_button: "Get Started Today",
-      contact_email: "ceo@mity.online",
+      contact_email: "lookgurnani@outlook.com",
       contact_phone: "+971 52 970 4315"
     };
 
@@ -2007,17 +1654,19 @@
       document.getElementById('hero-subtitle').textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
       document.getElementById('cta-button').textContent = config.cta_button || defaultConfig.cta_button;
       
-      const emailElements = document.querySelectorAll('#contact-email');
-      emailElements.forEach(el => {
-        el.textContent = config.contact_email || defaultConfig.contact_email;
-        el.href = `mailto:${config.contact_email || defaultConfig.contact_email}`;
-      });
+      const email = config.contact_email || defaultConfig.contact_email;
+      const emailEl = document.getElementById('contact-email');
+      if (emailEl) {
+        emailEl.textContent = email;
+        emailEl.href = `mailto:${email}`;
+      }
       
-      const phoneElements = document.querySelectorAll('#contact-phone');
-      phoneElements.forEach(el => {
-        el.textContent = config.contact_phone || defaultConfig.contact_phone;
-        el.href = `tel:${(config.contact_phone || defaultConfig.contact_phone).replace(/\s/g, '')}`;
-      });
+      const phone = config.contact_phone || defaultConfig.contact_phone;
+      const phoneEl = document.getElementById('contact-phone');
+      if (phoneEl) {
+        phoneEl.textContent = phone;
+        phoneEl.href = `tel:${phone.replace(/\s/g, '')}`;
+      }
     }
 
     // Initialize SDK
@@ -2043,24 +1692,14 @@
       });
     }
 
-    // Navbar scroll effect
-    window.addEventListener('scroll', () => {
-      const navbar = document.getElementById('navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-
     // Smooth scrolling
-    document.querySelectorAll('[data-scroll]').forEach(link => {
-      link.addEventListener('click', (e) => {
+    document.querySelectorAll('[data-scroll]').forEach(element => {
+      element.addEventListener('click', (e) => {
         e.preventDefault();
-        const targetId = link.getAttribute('data-scroll');
+        const targetId = element.getAttribute('data-scroll');
         const target = document.getElementById(targetId);
         if (target) {
-          const offsetTop = target.offsetTop - 80;
+          const offsetTop = target.offsetTop - 90;
           window.scrollTo({ top: offsetTop, behavior: 'smooth' });
         }
       });
@@ -2081,45 +1720,523 @@
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
-      const formData = {
-        fullName: document.getElementById('fullName').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        businessType: document.getElementById('businessType').value,
-        package: document.getElementById('package').value,
-        message: document.getElementById('message').value
-      };
-      
       const formMessage = document.getElementById('formMessage');
-      
-      // Show success message
       formMessage.textContent = 'Thank you! Your message has been sent successfully. We will contact you within 2 hours.';
       formMessage.className = 'form-message success';
       formMessage.style.display = 'block';
       
-      // Reset form
       this.reset();
       
-      // Hide message after 5 seconds
       setTimeout(() => {
         formMessage.style.display = 'none';
       }, 5000);
-      
-      // In a real implementation, you would send this data to your server
-      console.log('Form submitted:', formData);
     });
 
-    // Input focus animations
-    document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(input => {
-      input.addEventListener('focus', function() {
-        this.parentElement.style.transform = 'scale(1.02)';
-        this.parentElement.style.transition = 'transform 0.2s';
-      });
-      
-      input.addEventListener('blur', function() {
-        this.parentElement.style.transform = 'scale(1)';
+    // Modal Data
+    const modalData = {
+      'platform-setup': {
+        title: 'Platform Setup & Registration',
+        subtitle: 'Complete account creation with verification and compliance',
+        sections: [
+          {
+            title: 'What\'s Included',
+            content: `
+              <ul class="package-features-list">
+                <li>Complete account registration on your chosen platform</li>
+                <li>Business verification and documentation submission</li>
+                <li>Tax Registration Number (TRN) integration</li>
+                <li>Payment gateway setup and configuration</li>
+                <li>Brand registry application (where applicable)</li>
+                <li>Seller dashboard configuration and optimization</li>
+                <li>Initial policy compliance review</li>
+                <li>Category approval assistance (basic categories)</li>
+                <li>Account health monitoring setup</li>
+                <li>Training on seller dashboard basics</li>
+              </ul>
+            `
+          },
+          {
+            title: 'Supported Platforms',
+            content: `
+              <div class="package-grid">
+                <div class="package-box">
+                  <h4>Marketplace</h4>
+                  <p style="color: #718096; margin-bottom: 0.5rem;">Amazon UAE, Noon, Namshi</p>
+                  <div class="price">AED 399</div>
+                </div>
+                <div class="package-box">
+                  <h4>Retail Partners</h4>
+                  <p style="color: #718096; margin-bottom: 0.5rem;">Carrefour, Sharaf DG, Lulu</p>
+                  <div class="price">AED 449</div>
+                </div>
+                <div class="package-box">
+                  <h4>Multi-Platform</h4>
+                  <p style="color: #718096; margin-bottom: 0.5rem;">2+ platforms simultaneously</p>
+                  <div class="price">AED 699 <span>Save 30%</span></div>
+                </div>
+              </div>
+            `
+          },
+          {
+            title: 'Timeline',
+            content: `
+              <ul class="package-features-list">
+                <li>Day 1-2: Documentation collection and verification</li>
+                <li>Day 3-5: Account creation and submission</li>
+                <li>Day 6-10: Platform approval process (varies by platform)</li>
+                <li>Day 11-14: Dashboard configuration and training</li>
+              </ul>
+              <p style="margin-top: 1.5rem; color: #718096; font-size: 0.95rem;">Average go-live time: 7-14 business days (depending on platform verification)</p>
+            `
+          }
+        ]
+      },
+      'product-listing': {
+        title: 'Product Listing Services',
+        subtitle: 'SEO-optimized listings that drive visibility and conversions',
+        sections: [
+          {
+            title: 'What\'s Included Per Product',
+            content: `
+              <ul class="package-features-list">
+                <li>Keyword research and SEO-optimized product title (up to 200 characters)</li>
+                <li>Detailed product description with features and benefits</li>
+                <li>Bullet points highlighting key specifications (5-7 points)</li>
+                <li>Complete attribute mapping and categorization</li>
+                <li>Pricing setup and inventory configuration</li>
+                <li>Shipping details and fulfillment method setup</li>
+                <li>Image upload and optimization (if provided)</li>
+                <li>Search terms and backend keywords optimization</li>
+                <li>Compliance check for platform guidelines</li>
+                <li>Quality assurance review before publishing</li>
+              </ul>
+            `
+          },
+          {
+            title: 'Pricing Structure',
+            content: `
+              <div class="package-grid">
+                <div class="package-box">
+                  <h4>Starter</h4>
+                  <p style="color: #718096; margin-bottom: 0.5rem;">50-200 products</p>
+                  <div class="price">AED 4 <span>per product</span></div>
+                </div>
+                <div class="package-box">
+                  <h4>Growth</h4>
+                  <p style="color: #718096; margin-bottom: 0.5rem;">201-500 products</p>
+                  <div class="price">AED 3.5 <span>per product</span></div>
+                </div>
+                <div class="package-box">
+                  <h4>Enterprise</h4>
+                  <p style="color: #718096; margin-bottom: 0.5rem;">500+ products</p>
+                  <div class="price">AED 3 <span>per product</span></div>
+                </div>
+              </div>
+              <p style="margin-top: 1.5rem; color: #718096; font-size: 0.95rem;">Minimum order: 50 products | Bulk upload capability available</p>
+            `
+          },
+          {
+            title: 'Turnaround Time',
+            content: `
+              <ul class="package-features-list">
+                <li>50-100 products: 3-5 business days</li>
+                <li>101-200 products: 5-7 business days</li>
+                <li>201-500 products: 7-10 business days</li>
+                <li>500+ products: Custom timeline (typically 10-14 days)</li>
+              </ul>
+              <p style="margin-top: 1.5rem; color: #667eea; font-weight: 600;">Rush service available: +50% fee for 50% faster delivery</p>
+            `
+          }
+        ]
+      },
+      'photography': {
+        title: 'Professional Photography',
+        subtitle: 'Studio-quality product photos that increase conversion rates by 30-50%',
+        sections: [
+          {
+            title: 'Photography Packages',
+            content: `
+              <div class="package-grid">
+                <div class="package-box">
+                  <h4>Basic</h4>
+                  <div class="price">AED 25 <span>per product</span></div>
+                  <ul class="package-features-list">
+                    <li>3 white background images</li>
+                    <li>Basic editing and enhancement</li>
+                    <li>Platform-compliant sizing</li>
+                    <li>Standard resolution (72 DPI)</li>
+                  </ul>
+                </div>
+                <div class="package-box">
+                  <h4>Professional</h4>
+                  <div class="price">AED 45 <span>per product</span></div>
+                  <ul class="package-features-list">
+                    <li>5 white background images</li>
+                    <li>2 lifestyle/contextual images</li>
+                    <li>Advanced editing</li>
+                    <li>High resolution (300 DPI)</li>
+                    <li>Infographics (1 per product)</li>
+                  </ul>
+                </div>
+                <div class="package-box">
+                  <h4>Premium</h4>
+                  <div class="price">AED 75 <span>per product</span></div>
+                  <ul class="package-features-list">
+                    <li>7 white background images</li>
+                    <li>3 lifestyle images</li>
+                    <li>Premium editing & retouching</li>
+                    <li>High resolution (300 DPI)</li>
+                    <li>2 infographics</li>
+                    <li>360° view option</li>
+                    <li>Model photography (if needed)</li>
+                  </ul>
+                </div>
+              </div>
+            `
+          },
+          {
+            title: 'Photography Features',
+            content: `
+              <ul class="package-features-list">
+                <li>Professional studio setup with proper lighting</li>
+                <li>Multiple angle shots (front, back, sides, details)</li>
+                <li>Color correction and image enhancement</li>
+                <li>Background removal and white background setup</li>
+                <li>Shadow and reflection effects (where appropriate)</li>
+                <li>Lifestyle photography in contextual settings</li>
+                <li>Product measurement and scale representation</li>
+                <li>Compliance with platform image requirements</li>
+                <li>Fast turnaround: 3-5 business days</li>
+                <li>Unlimited revisions (within reason)</li>
+              </ul>
+            `
+          },
+          {
+            title: 'Why Professional Photos Matter',
+            content: `
+              <ul class="package-features-list">
+                <li>Increase conversion rates by 30-50%</li>
+                <li>Reduce return rates through accurate representation</li>
+                <li>Improve search ranking and visibility on platforms</li>
+                <li>Build brand credibility and trust with customers</li>
+                <li>Stand out from competitors with professional imagery</li>
+                <li>Meet all platform image quality requirements</li>
+              </ul>
+            `
+          }
+        ]
+      },
+      'order-management': {
+        title: 'Order Management Services',
+        subtitle: 'Complete daily operations management so you can focus on growth',
+        sections: [
+          {
+            title: 'Monthly Management Plans',
+            content: `
+              <div class="package-grid">
+                <div class="package-box">
+                  <h4>Basic</h4>
+                  <p style="color: #718096; margin-bottom: 0.5rem;">Up to 100 orders/month</p>
+                  <div class="price">AED 1,999 <span>per month</span></div>
+                </div>
+                <div class="package-box">
+                  <h4>Professional</h4>
+                  <p style="color: #718096; margin-bottom: 0.5rem;">101-300 orders/month</p>
+                  <div class="price">AED 3,499 <span>per month</span></div>
+                </div>
+                <div class="package-box">
+                  <h4>Enterprise</h4>
+                  <p style="color: #718096; margin-bottom: 0.5rem;">300+ orders/month</p>
+                  <div class="price">Custom <span>contact us</span></div>
+                </div>
+              </div>
+            `
+          },
+          {
+            title: 'Daily Operations Included',
+            content: `
+              <ul class="package-features-list">
+                <li>Daily order monitoring and processing (7 days/week)</li>
+                <li>Real-time inventory synchronization across platforms</li>
+                <li>Pricing updates and competitive monitoring</li>
+                <li>Customer inquiry handling and response (within 24 hours)</li>
+                <li>Returns and refunds coordination</li>
+                <li>Negative feedback management and resolution</li>
+                <li>Performance metrics tracking and reporting</li>
+                <li>Stock alert notifications and reordering assistance</li>
+                <li>Platform policy compliance monitoring</li>
+                <li>Account health maintenance and optimization</li>
+              </ul>
+            `
+          },
+          {
+            title: 'Reporting & Analytics',
+            content: `
+              <ul class="package-features-list">
+                <li>Weekly performance summary reports</li>
+                <li>Monthly detailed analytics and insights</li>
+                <li>Sales trends and best-seller analysis</li>
+                <li>Inventory movement reports</li>
+                <li>Customer feedback compilation</li>
+                <li>Pricing optimization recommendations</li>
+                <li>Promotional campaign performance tracking</li>
+                <li>Competitor analysis (monthly)</li>
+              </ul>
+            `
+          },
+          {
+            title: 'Support & Communication',
+            content: `
+              <ul class="package-features-list">
+                <li>Dedicated account manager assigned to your business</li>
+                <li>WhatsApp/Email support Monday-Saturday (9 AM - 6 PM)</li>
+                <li>Monthly strategy review calls</li>
+                <li>Emergency support for critical issues</li>
+                <li>Regular platform updates and policy change notifications</li>
+              </ul>
+            `
+          }
+        ]
+      },
+      'packages': {
+        title: 'Complete Service Packages',
+        subtitle: 'All-inclusive solutions with 30% savings vs individual services',
+        sections: [
+          {
+            title: 'Package Options',
+            content: `
+              <div class="package-grid">
+                <div class="package-box">
+                  <h4>Starter</h4>
+                  <div class="price">AED 2,499</div>
+                  <ul class="package-features-list">
+                    <li>Setup on 1 platform</li>
+                    <li>50 product listings</li>
+                    <li>Basic photography (3 images per product)</li>
+                    <li>1 month of order management</li>
+                    <li>Perfect for new businesses</li>
+                  </ul>
+                </div>
+                <div class="package-box">
+                  <h4>Growth</h4>
+                  <div class="price">AED 7,999</div>
+                  <ul class="package-features-list">
+                    <li>Setup on 2 platforms</li>
+                    <li>200 product listings</li>
+                    <li>Professional photography (5 images per product)</li>
+                    <li>3 months of order management</li>
+                    <li>Basic advertising setup</li>
+                    <li>Best value package</li>
+                  </ul>
+                </div>
+                <div class="package-box">
+                  <h4>Enterprise</h4>
+                  <div class="price">AED 15,999</div>
+                  <ul class="package-features-list">
+                    <li>Setup on 3+ platforms</li>
+                    <li>500 product listings</li>
+                    <li>Premium photography (7 images per product)</li>
+                    <li>6 months of order management</li>
+                    <li>Advanced advertising management</li>
+                    <li>Priority support</li>
+                    <li>Custom website included</li>
+                  </ul>
+                </div>
+              </div>
+            `
+          },
+          {
+            title: 'Package Benefits',
+            content: `
+              <ul class="package-features-list">
+                <li>Save 30% compared to purchasing services individually</li>
+                <li>20% OFF for first-time clients (limited time)</li>
+                <li>Priority onboarding and faster setup times</li>
+                <li>Dedicated account manager throughout the process</li>
+                <li>Free consultation and strategy planning session</li>
+                <li>Flexible payment plans available (3-6 months)</li>
+                <li>All-inclusive pricing with no hidden fees</li>
+                <li>Free training sessions for your team</li>
+                <li>Quarterly business review and optimization</li>
+              </ul>
+            `
+          },
+          {
+            title: 'Add-On Services',
+            content: `
+              <ul class="package-features-list">
+                <li>Additional platform setup: AED 299 per platform</li>
+                <li>Extra product listings: AED 3 per product</li>
+                <li>Extended photography: AED 20 per product</li>
+                <li>Additional management months: AED 1,799 per month</li>
+                <li>Advertising campaign management: 15% of ad spend</li>
+                <li>Content creation and copywriting: AED 299 per piece</li>
+                <li>Custom reporting and analytics: AED 499/month</li>
+              </ul>
+            `
+          },
+          {
+            title: 'Why Choose a Package?',
+            content: `
+              <ul class="package-features-list">
+                <li>Comprehensive solution covering all aspects of e-commerce</li>
+                <li>Significant cost savings (30% vs individual services)</li>
+                <li>Faster time to market with coordinated setup</li>
+                <li>Single point of contact for all services</li>
+                <li>Proven success formula from 200+ launches</li>
+                <li>Risk-free guarantee: If not satisfied, we'll refund the difference</li>
+              </ul>
+            `
+          }
+        ]
+      },
+      'additional': {
+        title: 'Additional Services',
+        subtitle: 'Specialized services to maximize your online presence',
+        sections: [
+          {
+            title: 'Available Services',
+            content: `
+              <div class="package-grid">
+                <div class="package-box">
+                  <h4>Category Approvals</h4>
+                  <div class="price">AED 599</div>
+                  <ul class="package-features-list">
+                    <li>Restricted category application</li>
+                    <li>Document preparation</li>
+                    <li>Platform communication</li>
+                    <li>Approval follow-up</li>
+                  </ul>
+                </div>
+                <div class="package-box">
+                  <h4>Training Sessions</h4>
+                  <div class="price">AED 799</div>
+                  <ul class="package-features-list">
+                    <li>2-hour comprehensive training</li>
+                    <li>Platform dashboard walkthrough</li>
+                    <li>Best practices guide</li>
+                    <li>Q&A session included</li>
+                  </ul>
+                </div>
+                <div class="package-box">
+                  <h4>Content Creation</h4>
+                  <div class="price">AED 299</div>
+                  <ul class="package-features-list">
+                    <li>Product descriptions</li>
+                    <li>Brand story development</li>
+                    <li>SEO-optimized content</li>
+                    <li>A+ content for Amazon</li>
+                  </ul>
+                </div>
+              </div>
+            `
+          },
+          {
+            title: 'Website Development',
+            content: `
+              <ul class="package-features-list">
+                <li>Basic Website (5 pages): AED 5,999 - Mobile responsive design, contact forms, basic SEO</li>
+                <li>E-commerce Website: AED 12,999 - Full shopping cart, payment gateway, product catalog up to 100 items</li>
+                <li>Enterprise Solution: AED 25,999+ - Custom features, advanced integrations, unlimited products, mobile app</li>
+                <li>Website Maintenance: AED 499/month - Updates, security, hosting, technical support</li>
+              </ul>
+            `
+          },
+          {
+            title: 'Advertising Management',
+            content: `
+              <ul class="package-features-list">
+                <li>PPC Campaign Setup: AED 1,499 one-time - Keyword research, campaign structure, ad copy creation</li>
+                <li>Monthly Management: 15% of ad spend (minimum AED 999) - Campaign optimization, A/B testing, performance reporting</li>
+                <li>Social Media Advertising: AED 1,999/month - Facebook, Instagram ads management and optimization</li>
+                <li>Promotional Campaign Planning: AED 799 - Deal strategy, timing optimization, promotional calendar</li>
+              </ul>
+            `
+          },
+          {
+            title: 'Advanced Services',
+            content: `
+              <ul class="package-features-list">
+                <li>Brand Registry & IP Protection: AED 1,299</li>
+                <li>Enhanced Brand Content (A+ Content): AED 799 per page</li>
+                <li>Video Production (30-60 seconds): AED 2,499</li>
+                <li>Product Review Management: AED 599/month</li>
+                <li>Competitor Analysis Report: AED 999 one-time</li>
+                <li>International Expansion Consulting: AED 2,499</li>
+                <li>Marketplace Compliance Audit: AED 1,499</li>
+              </ul>
+            `
+          }
+        ]
+      }
+    };
+
+    // Modal Functions
+    function openModal(modalType) {
+      const data = modalData[modalType];
+      if (!data) return;
+
+      const modalContent = document.getElementById('modalContent');
+      const modalOverlay = document.getElementById('modalOverlay');
+
+      let sectionsHTML = data.sections.map(section => `
+        <div class="package-section">
+          <h3>${section.title}</h3>
+          ${section.content}
+        </div>
+      `).join('');
+
+      modalContent.innerHTML = `
+        <div class="modal-header">
+          <button class="modal-close" onclick="closeModal()">
+            <svg viewBox="0 0 24 24" fill="none">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+          <h2 class="modal-title">${data.title}</h2>
+          <p class="modal-subtitle">${data.subtitle}</p>
+        </div>
+        <div class="modal-body">
+          ${sectionsHTML}
+          <button class="modal-cta" onclick="closeModal(); document.querySelector('[data-scroll=contact]').click();">
+            Get Started Today
+          </button>
+        </div>
+      `;
+
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modalOverlay = document.getElementById('modalOverlay');
+      modalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Category card click handlers
+    document.querySelectorAll('.category-card[data-modal]').forEach(card => {
+      card.addEventListener('click', function(e) {
+        if (e.target.classList.contains('category-cta')) return;
+        const modalType = this.getAttribute('data-modal');
+        openModal(modalType);
       });
     });
+
+    // Close modal on overlay click
+    document.getElementById('modalOverlay').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
+
+    // Close modal on ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a942ef052c0c369',t:'MTc2NDk0NDQxNy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a94ebcb570120cb',t:'MTc2NDk1MjE1My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
